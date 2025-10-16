@@ -1,0 +1,105 @@
+type: collection.insomnia.rest/5.0
+name: Scrapping app
+meta:
+  id: wrk_606d72a9e4224c75ab9d15f7aed9176e
+  created: 1760535425779
+  modified: 1760620338809
+  description: ""
+collection:
+  - url: https://www.infomoney.com.br/wp-json/infomoney/v1/cards
+    name: post infomoney
+    meta:
+      id: req_ebb326283cc946279b6d48be11f4f7ba
+      created: 1760535425873
+      modified: 1760620260575
+      isPrivate: false
+      description: ""
+      sortKey: -1760535425873
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"post_id": 2565621,
+        	"categories": [
+        		1
+        	],
+        	"tags": []
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Mozilla/5.0
+        id: pair_75229c5d3e8940febf2ef9b3b296ec64
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: java
+    meta:
+      id: fld_f1e6847216af476db0d580922e10bf33
+      created: 1760545176117
+      modified: 1760545176117
+      sortKey: -1760545176117
+      description: ""
+    children:
+      - url: http://localhost:8080/news/cards
+        name: Scrap 12 ultimas noticias
+        meta:
+          id: req_6567238f1656495da66f866fe3948865
+          created: 1760545178978
+          modified: 1760620312241
+          isPrivate: false
+          description: ""
+          sortKey: -1760545178978
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/news/scrape?url=https://www.infomoney.com.br/mercados/previa-pib-brasil-tarifas-eua-fed-bc-agenda-16102025/
+        name: Scrap URL especifica
+        meta:
+          id: req_ad60c6056510431bbc05952de87f0dc1
+          created: 1760545927498
+          modified: 1760620306215
+          isPrivate: false
+          description: ""
+          sortKey: -1760545927498
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_73af321d56b0af3c186b6d310562ff5500ca2c9e
+    created: 1760535425788
+    modified: 1760535425788
+environments:
+  name: Base Environment
+  meta:
+    id: env_73af321d56b0af3c186b6d310562ff5500ca2c9e
+    created: 1760535425785
+    modified: 1760535425785
+    isPrivate: false
